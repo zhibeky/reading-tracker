@@ -1,79 +1,79 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 24px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
+/*.container {*/
+/*  width: 100%;*/
+/*  margin: 0 auto;*/
+/*  padding: 24px;*/
+/*  background-color: white;*/
+/*  border-radius: 8px;*/
+/*  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
+/*.grid {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(2, 1fr);*/
+/*  gap: 24px;*/
+/*}*/
 
-.header {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+/*.header {*/
+/*  grid-column: 1 / -1;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 16px;*/
+/*}*/
 
-.radio-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+/*.radio-group {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 16px;*/
+/*}*/
 
-.radio {
-  margin-right: 8px;
-}
+/*.radio {*/
+/*  margin-right: 8px;*/
+/*}*/
 
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+/*.column {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  gap: 16px;*/
+/*}*/
 
-.field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+/*.field-group {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  gap: 8px;*/
+/*}*/
 
-.label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #374151;
-}
+/*.label {*/
+/*  font-size: 14px;*/
+/*  font-weight: 500;*/
+/*  color: #374151;*/
+/*}*/
 
-.input {
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-}
+/*.input {*/
+/*  padding: 8px 12px;*/
+/*  border: 1px solid #d1d5db;*/
+/*  border-radius: 6px;*/
+/*  font-size: 14px;*/
+/*  outline: none;*/
+/*}*/
 
-.textarea {
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-  resize: vertical;
-}
+/*.textarea {*/
+/*  padding: 8px 12px;*/
+/*  border: 1px solid #d1d5db;*/
+/*  border-radius: 6px;*/
+/*  font-size: 14px;*/
+/*  outline: none;*/
+/*  resize: vertical;*/
+/*}*/
 
-.hearts {
-  display: flex;
-  gap: 4px;
-}
+/*.hearts {*/
+/*  display: flex;*/
+/*  gap: 4px;*/
+/*}*/
 
-.dots {
-  display: flex;
-}
+/*.dots {*/
+/*  display: flex;*/
+/*}*/
 
-.full-width {
-  grid-column: 1 / -1;
-}
+/*.full-width {*/
+/*  grid-column: 1 / -1;*/
+/*}*/

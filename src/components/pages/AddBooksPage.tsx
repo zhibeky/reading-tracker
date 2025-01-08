@@ -1,15 +1,21 @@
-import React, {useState } from 'react';
+import {useState, FormEvent} from 'react';
 import { BookForm } from '../organisms/BookForm';
+import {BookTracker} from '../organisms/BookTracker.tsx'
 
 export const AddBooksPage = () => {
     const [bookData, setBookData] = useState({
-        isAudiobook: false,
         title: '',
         author: '',
+        isAudioBook: 'false',
+        favouriteCharacter: '',
+        startedReading: '', // Date dd-mm-yyyy
         enjoymentRating: 0,
         aboutAuthor: '',
+        quote: '',
         genre: '',
         publishedDate: '',
+        recommendTo: '',
+        finishedDate: '',
         readingEase: 0,
         summary: '',
     });
@@ -18,7 +24,7 @@ export const AddBooksPage = () => {
         setBookData(updatedData);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         console.log('Book Data Submitted:', bookData);
         alert('Form submitted successfully!');
@@ -26,9 +32,10 @@ export const AddBooksPage = () => {
 
     return (
         <div style={styles.appContainer}>
-            <h1 style={styles.title}>Reading App</h1>
+            <h1 style={styles.title}>Track Your Reading Journey</h1>
             <form onSubmit={handleSubmit} style={styles.formContainer}>
                 <BookForm bookData={bookData} onChange={handleBookDataChange} />
+                {/*<BookTracker />*/}
                 <button type="submit" style={styles.submitButton}>
                     Submit
                 </button>
@@ -41,7 +48,8 @@ const styles = {
     appContainer: {
         padding: '24px',
         fontFamily: 'Arial, sans-serif',
-        maxWidth: '800px',
+        width: '100%',
+        maxWidth: '2000px',
         margin: '0 auto',
         backgroundColor: '#ffffff',
         borderRadius: '8px',
