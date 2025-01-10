@@ -1,4 +1,3 @@
-import {BookIcon} from "../atoms/BookIcon.tsx";
 import {RadioButton} from "../atoms/RadioButton.tsx"
 import {FC} from "react";
 
@@ -9,9 +8,8 @@ interface BookTypeSelectorProps {
 
 export const BookTypeSelector: FC<BookTypeSelectorProps> = ({ isAudioBook, onChange }) => (
 
-    <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
-        <BookIcon />
-        <div style={{ display: 'flex', gap: '16px' }}>
+    <div className="flex items-center gap-4 font-sans">
+        <div className="flex gap-4">
             <RadioButton
                 name="bookType"
                 label="Book"

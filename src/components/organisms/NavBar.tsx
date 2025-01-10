@@ -1,20 +1,12 @@
-// export const Navbar = () => {
-//     return (
-//         <header className='flex flex-row justify-center'>
-//             <a href="/">Home </a>
-//             <a href="/add-book">Add Book </a>
-//             <a href="/about">About Me </a>
-//         </header>
-//     )
-// }
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {BookIcon} from "../atoms/BookIcon.tsx"
 
 const navigation = [
-    { name: 'Home', href: '/', current: true },
+    { name: 'Home', href: '/', current: false },
     { name: 'Add Book', href: '/add-book', current: false },
-    { name: 'About Me', href: '/about', current: false },
+    { name: 'Stats', href: '#', current: false },
+    { name: 'About Me', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -23,13 +15,13 @@ function classNames(...classes) {
 
 export function Navbar() {
     return (
-        <Disclosure as="nav" className="bg-pink-800">
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <Disclosure as="nav" className="bg-white font-sans bg-opacity-90 shadow-md">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-pink-300 hover:bg-pink-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                            <span className="absolute -inset-0.5" />
+                        <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                            {/*<span className="absolute -inset-0.5" />*/}
                             <span className="sr-only">Open main menu</span>
                             <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
                             <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
@@ -52,7 +44,7 @@ export function Navbar() {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-pink-900 text-white' : 'text-gray-300 hover:bg-pink-700 hover:text-white',
+                                            item.current ? 'text-blue-700 border-b-2 border-blue-700' : 'text-gray-700 hover:text-blue-500 hover:border-b-2 hover:border-blue-500',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
@@ -75,8 +67,8 @@ export function Navbar() {
                         {/* Profile dropdown */}
                         <Menu as="div" className="relative ml-3">
                             <div>
-                                <MenuButton className="relative flex rounded-full bg-pink-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-800">
-                                    <span className="absolute -inset-1.5" />
+                                <MenuButton className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    {/*<span className="absolute -inset-1.5" />*/}
                                     <span className="sr-only">Open user menu</span>
                                     <img
                                         alt=""
@@ -128,7 +120,8 @@ export function Navbar() {
                             href={item.href}
                             aria-current={item.current ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'bg-pink-900 text-white' : 'text-pink-300 hover:bg-pink-700 hover:text-white',
+                                item.current ? 'bg-blue-100 text-blue-700'
+                                    : 'text-gray-700 hover:bg-gray-100 hover:text-blue-500',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >

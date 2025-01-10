@@ -19,19 +19,8 @@ export const BookForm = ({ bookData, onChange }) => {
     };
 
     return (
-        <div style={{
-            width: '1000px',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '24px',
-            backgroundColor: 'white',
-            borderRadius: '8px',
-            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-        }}>
-            <div style={{
-                display: 'grid',
-                gap: '24px',
-            }}>
+        <div className="w-full max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md">
+            <div className="grid gap-6">
                 <FormField label="Select book type">
                     <BookTypeSelector
                         isAudiobook={bookData.isAudiobook}
@@ -39,12 +28,10 @@ export const BookForm = ({ bookData, onChange }) => {
                     />
                 </FormField>
 
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '16px',
-                }}>
-                    <FormField label="Title">
+                {/*Uncomment this to show FormFields in one column*/}
+                {/*<div className="flex flex-col gap-4">*/}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <FormField label="Title">
                         <Input
                             name="title"
                             value={bookData.title}
@@ -107,12 +94,9 @@ export const BookForm = ({ bookData, onChange }) => {
                     </FormField>
                 </div>
 
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '16px',
-                }}>
-                    <FormField label="Genre">
+                {/*<div className="flex flex-col gap-4">*/}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <FormField label="Genre">
                         <Input
                             name="genre"
                             value={bookData.genre}
@@ -149,38 +133,7 @@ export const BookForm = ({ bookData, onChange }) => {
                         />
                     </FormField>
                 </div>
-
-                <div style={{
-                    gridColumn: '1 / -1',
-                }}>
-
-                </div>
             </div>
         </div>
     );
 };
-//
-// const styles = {
-//     container: {
-//         width: '1200px',
-//         maxWidth: '1200px',
-//         margin: '0 auto',
-//         padding: '24px',
-//         backgroundColor: 'white',
-//         borderRadius: '8px',
-//         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-//     },
-//     grid: {
-//         display: 'grid',
-//         gridTemplateColumns: 'repeat(2, 1fr)',
-//         gap: '24px',
-//     },
-//     column: {
-//         display: 'flex',
-//         flexDirection: 'column',
-//         gap: '16px',
-//     },
-//     fullWidth: {
-//         gridColumn: '1 / -1',
-//     },
-// };

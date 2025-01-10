@@ -2,7 +2,14 @@
 export default {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        footerBg: '#3A405A',
+      },
+    },
   },
   plugins: [],
 }

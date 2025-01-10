@@ -1,15 +1,9 @@
-export const Input = ({name, value, onChange, type='text', ...props}) => (
+export const Input = ({name, value, onChange, type='text'}) => (
     <input
         type={type}
         name={name}
+        value={value}
         onChange={onChange}
-        style={{
-            padding: '8px 12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '6px',
-            fontSize: '14px',
-            outline: 'none',
-            width: '100%',
-        }}
-        {...props}/>
+        className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        />
 )

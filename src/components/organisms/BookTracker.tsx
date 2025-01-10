@@ -12,9 +12,9 @@ export const BookTracker = () => {
         aboutAuthor: '',
         quote: '',
         genre: '',
-        publishedDate: '',
+        publishedDate: '', // Date dd-mm-yyyy
         recommendTo: '',
-        finishedDate: '',
+        finishedDate: '', // Date dd-mm-yyyy
         readingEase: 0,
         summary: '',
     });
