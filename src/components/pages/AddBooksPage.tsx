@@ -1,6 +1,5 @@
 import {useState, FormEvent} from 'react';
 import { BookForm } from '../organisms/BookForm';
-import {BookTracker} from '../organisms/BookTracker.tsx'
 
 export const AddBooksPage = () => {
     const [bookData, setBookData] = useState({
@@ -31,50 +30,17 @@ export const AddBooksPage = () => {
     };
 
     return (
-        <div style={styles.appContainer}>
-            <h1 style={styles.title}>Track Your Reading Journey</h1>
-            <form onSubmit={handleSubmit} style={styles.formContainer}>
+        <div className="p-6 max-w-5xl mx-auto bg-white rounded-lg shadow-md">
+            <h1 className="text-2xl font-bold  text-center mb-6 text-gray-800">
+                Track Your Reading Journey
+            </h1>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <BookForm bookData={bookData} onChange={handleBookDataChange} />
-                {/*<BookTracker />*/}
-                <button type="submit" style={styles.submitButton}>
+                {/*<BookTrackerPage />*/}
+                <button type="submit" className="py-3 px-6 bg-[#E9AFA3] text-white rounded-md text-lg font-medium hover:bg-[#D79A8F] focus-outline-none focus:ring-[#E9AFA3] w-full max-w-xs mx-auto">
                     Submit
                 </button>
             </form>
         </div>
     );
-};
-
-const styles = {
-    appContainer: {
-        padding: '24px',
-        fontFamily: 'Arial, sans-serif',
-        width: '100%',
-        maxWidth: '2000px',
-        margin: '0 auto',
-        backgroundColor: '#ffffff',
-        borderRadius: '8px',
-        boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    },
-    title: {
-        textAlign: 'center',
-        marginBottom: '24px',
-        color: '#1f2937',
-    },
-    formContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px',
-    },
-    submitButton: {
-        padding: '12px 16px',
-        backgroundColor: '#3b82f6',
-        color: '#ffffff',
-        border: 'none',
-        borderRadius: '6px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        alignSelf: 'center',
-        width: '100%',
-        maxWidth: '200px',
-    },
 };

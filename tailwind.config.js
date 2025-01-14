@@ -7,7 +7,11 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        footerBg: '#3A405A',
+        footerBg: '#373F51',
+        cb807d: '#CB807D',
+        e9afa3: '#E9AFA3',
+        f8f9fa: '#F8F9FA',
+        f5b7b1: '#F5B7B1',
       },
     },
   },

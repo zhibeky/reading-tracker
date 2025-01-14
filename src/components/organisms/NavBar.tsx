@@ -4,9 +4,10 @@ import {BookIcon} from "../atoms/BookIcon.tsx"
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
+    // { name: 'Book Tracker', href: '#', current: false },
     { name: 'Add Book', href: '/add-book', current: false },
     { name: 'Stats', href: '#', current: false },
-    { name: 'About Me', href: '#', current: false },
+    { name: 'About', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -44,7 +45,9 @@ export function Navbar() {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'text-blue-700 border-b-2 border-blue-700' : 'text-gray-700 hover:text-blue-500 hover:border-b-2 hover:border-blue-500',
+                                            item.current
+                                                ? 'text-gray-800 border-b-2 border-[#D79A8F]'
+                                                : 'text-gray-800 hover:text-[#D79A8F] hover:border-b-2 hover:border-[#D79A8F]',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >

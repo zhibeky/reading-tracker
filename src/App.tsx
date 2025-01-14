@@ -1,12 +1,10 @@
-import {AddBooksPage} from "./components/pages/AddBooksPage.tsx";
-import {Navbar} from "./components/organisms/NavBar.tsx";
-
+import {HomePage} from "../src/components/pages/HomePage.tsx"
 export const App = () => {
 
 
     return (
         <div>
-            <div>Home</div>
+            <HomePage />
         </div>
     );
 };

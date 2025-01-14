@@ -4,10 +4,12 @@ import {Footer} from "../organisms/Footer.tsx"
 
 export const RootLayout = () => {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             <Navbar/>
-            <Outlet/>
-            <Footer/>
+            <main className="flex-grow">
+                <Outlet/>
+            </main>
+            <Footer className="py-4"/>
         </div>
     )
 }
