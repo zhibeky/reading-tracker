@@ -4,8 +4,8 @@ import {BookIcon} from "../atoms/BookIcon.tsx"
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
-    // { name: 'Book Tracker', href: '#', current: false },
-    { name: 'Add Book', href: '/add-book', current: false },
+    { name: 'Book Tracker', href: '/book-tracker', current: false },
+    // { name: 'Add Book', href: '/add-book', current: false },
     { name: 'Stats', href: '#', current: false },
     { name: 'About', href: '#', current: false },
 ]

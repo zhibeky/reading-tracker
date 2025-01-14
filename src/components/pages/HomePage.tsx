@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export const HomePage = () => {
    return (
        <main className="flex flex-col items-center font-sans justify-center min-h-screen bg-white px-6 py-12">
