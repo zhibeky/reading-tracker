@@ -1,10 +1,16 @@
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import {HomePage} from "../src/components/pages/HomePage.tsx"
-export const App = () => {
 
-
+export const App = () =>{
     return (
-        <div>
-            <HomePage />
-        </div>
+        <header>
+            <SignedOut>
+                {/*<SignInButton />*/}
+                <HomePage />
+            </SignedOut>
+            <SignedIn>
+                <HomePage />
+            </SignedIn>
+        </header>
     );
-};
+}

@@ -1,7 +1,7 @@
 export interface Book {
     title: string;
     author: string;
-    isAudioBook: string;
+    isAudioBook: boolean;
     favouriteCharacter: string;
     startedReading: string; // Date in dd-mm-yyyy format
     enjoymentRating: number;

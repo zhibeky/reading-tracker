@@ -1,21 +1,41 @@
+import {ChangeEvent, FC} from 'react';
 import { Input } from '../atoms/Input';
 import { TextArea } from '../atoms/TextArea';
 import { FormField } from '../molecules/FormField';
 import ReadingEase from '../molecules/ReadingEase';
 import { BookTypeSelector } from '../molecules/BookTypeSelector';
 import HeartRating from "../atoms/HeartRating.tsx";
+import {Book} from "../../types/book.ts"
 
-export const BookForm = ({ bookData, onChange }) => {
-    const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        onChange({
-            ...bookData,
-            [name]: type === 'checkbox' ? checked : value
-        });
+
+interface BookFormProps {
+    bookData: Book;
+    onChange: (updatedBookData: Book) => void;
+}
+
+export const BookForm: FC<BookFormProps> = ({ bookData, onChange }) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+        const { name, value, type } = e.target;
+        if (type === 'checkbox') {
+            const {checked} = e.target as HTMLInputElement;
+            onChange({
+                ...bookData,
+                [name]: checked,
+            });
+        }{
+            onChange({
+                ...bookData,
+                [name]: value,
+            });
+        }
+        // onChange({
+        //     ...bookData,
+        //     [name]: type === 'checkbox' ? checked : value
+        // });
     };
 
-    const handleBookTypeChange = (isAudiobook) => {
-        onChange({ ...bookData, isAudiobook });
+    const handleBookTypeChange = (isAudioBook: boolean): void => {
+        onChange({ ...bookData, isAudioBook });
     };
 
     return (
@@ -23,7 +43,7 @@ export const BookForm = ({ bookData, onChange }) => {
             <div className="grid gap-6">
                 <FormField label="Select book type">
                     <BookTypeSelector
-                        isAudiobook={bookData.isAudiobook}
+                        isAudioBook={bookData.isAudioBook}
                         onChange={handleBookTypeChange}
                     />
                 </FormField>

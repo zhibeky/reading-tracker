@@ -9,7 +9,7 @@ export const RootLayout = () => {
             <main className="flex-grow">
                 <Outlet/>
             </main>
-            <Footer className="py-4"/>
+            <Footer/>
         </div>
     )
 }

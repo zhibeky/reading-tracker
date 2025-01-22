@@ -1,7 +1,16 @@
-import {Input} from "../atoms/Input.tsx"
-export const RadioButton = ({name, label, checked, onChange}) => (
+import {ChangeEventHandler, FC} from "react";
+// import {Input} from "../atoms/Input.tsx";
+
+interface RadioButtonProps {
+    name: string;
+    label: string;
+    checked: boolean;
+    onChange: ChangeEventHandler<HTMLInputElement>;
+}
+
+export const RadioButton: FC<RadioButtonProps> = ({name, label, checked, onChange}) => (
     <div className="flex items-center gap-2">
-        <Input
+        <input
             name={name}
             type='radio'
             checked={checked}

@@ -1,6 +1,8 @@
 import {useState, FormEvent} from 'react';
 import { BookForm } from '../organisms/BookForm';
 import {Book} from "../../types/book.ts";
+import {SignedIn, SignedOut } from "@clerk/clerk-react";
+import {Authorize} from "../organisms/Authorize.tsx";
 
 const saveBookToLocalStorage = (book: Book): void => {
     const storedBooks = localStorage.getItem('books');
@@ -41,20 +43,29 @@ export const AddBooksPage = () => {
     };
 
     return (
-        <div className="p-6 max-w-5xl mx-auto bg-white rounded-lg shadow-md">
-            <h1 className="text-2xl font-bold  text-center mb-6 text-gray-800">
-                Track Your Reading Journey
-            </h1>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <BookForm bookData={bookData} onChange={handleBookDataChange} />
-                {/*<BookTrackerPage />*/}
-                <button
-                    type="submit"
-                    className="py-3 px-6 bg-[#E9AFA3] text-white rounded-md text-lg font-medium hover:bg-[#D79A8F] focus-outline-none focus:ring-[#E9AFA3] w-full max-w-xs mx-auto"
-                >
-                    Submit
-                </button>
-            </form>
-        </div>
+        <main>
+            <SignedOut>
+                <div className="mt-6 p-6 max-w-5xl mx-auto bg-white rounded-lg shadow-md">
+                    <Authorize/>
+                </div>
+            </SignedOut>
+            <SignedIn>
+                <div className="p-6 max-w-5xl mx-auto bg-white rounded-lg shadow-md">
+                    <h1 className="text-2xl font-bold  text-center mb-6 text-gray-800">
+                        Track Your Reading Journey
+                    </h1>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                        <BookForm bookData={bookData} onChange={handleBookDataChange} />
+                        {/*<BookTrackerPage />*/}
+                        <button
+                            type="submit"
+                            className="py-3 px-6 bg-[#E9AFA3] text-white rounded-md text-lg font-medium hover:bg-[#D79A8F] focus-outline-none focus:ring-[#E9AFA3] w-full max-w-xs mx-auto"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </SignedIn>
+        </main>
     );
 };

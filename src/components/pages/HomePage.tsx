@@ -11,7 +11,7 @@ export const HomePage = () => {
                </p>
                <div className="mt-6">
                    <a
-                       href="/add-book"
+                       href="/book-tracker"
                        className="inline-block rounded-md bg-[#E9AFA3] px-6 py-3 text-white text-lg font-medium hover:bg-[#D79A8F] transition"
                    >
                        Get Started
