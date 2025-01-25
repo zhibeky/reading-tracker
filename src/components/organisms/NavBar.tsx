@@ -1,3 +1,4 @@
+import {Link, NavLink} from "react-router";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 // import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -5,11 +6,10 @@ import {BookIcon} from "../atoms/BookIcon.tsx"
 import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/clerk-react";
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Book Tracker', href: '/book-tracker', current: false },
-    // { name: 'Add Book', href: '/add-book', current: false },
-    { name: 'Stats', href: '#', current: false },
-    { name: 'About', href: '#', current: false },
+    { name: 'Home', href: '/' },
+    { name: 'Book Tracker', href: '/book-tracker' },
+    { name: 'Stats', href: '#' },
+    { name: 'About', href: '#' },
 ]
 
 function classNames(...classes: (string | undefined | null | false)[]): string {
@@ -32,7 +32,9 @@ export function Navbar() {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center">
-                            <BookIcon />
+                            <Link to="/">
+                                <BookIcon />
+                            </Link>
                         {/*    <img*/}
                         {/*        alt="Your Company"*/}
                         {/*        src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"*/}
@@ -42,19 +44,18 @@ export function Navbar() {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
+                                    <NavLink
                                         key={item.name}
-                                        href={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
-                                        className={classNames(
-                                            item.current
+                                        to={item.href}
+                                        className={({ isActive }) => classNames(
+                                            isActive
                                                 ? 'text-gray-800 border-b-2 border-[#D79A8F]'
                                                 : 'text-gray-800 hover:text-[#D79A8F] hover:border-b-2 hover:border-[#D79A8F]',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </NavLink>
                                 ))}
                             </div>
                         </div>
@@ -70,12 +71,15 @@ export function Navbar() {
                         {/*</button>*/}
 
 
-
                         <SignedOut>
-                            <SignInButton />
+                            <div
+                                className="text-gray-800 hover:text-[#D79A8F] hover:border-b-2 hover:border-[#D79A8F] rounded-md px-3 py-2 text-sm font-medium"
+                            >
+                                <SignInButton/>
+                            </div>
                         </SignedOut>
                         <SignedIn>
-                            <UserButton />
+                            <UserButton/>
                         </SignedIn>
                         {/* Profile dropdown */}
                         {/*<Menu as="div" className="relative ml-3">*/}
@@ -127,19 +131,17 @@ export function Navbar() {
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
-                        <DisclosureButton
+                        <NavLink
                             key={item.name}
-                            as="a"
-                            href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
-                            className={classNames(
-                                item.current ? 'bg-blue-100 text-blue-700'
-                                    : 'text-gray-700 hover:bg-gray-100 hover:text-blue-500',
+                            to={item.href}
+                            className={({ isActive }) => classNames(
+                                isActive ? 'bg-[#E9AFA3] text-white hover:bg-[#D79A8F]'
+                                    : 'text-gray-700 hover:text-[#D79A8F] hover:border-[#D79A8F]',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >
                             {item.name}
-                        </DisclosureButton>
+                        </NavLink>
                     ))}
                 </div>
             </DisclosurePanel>
