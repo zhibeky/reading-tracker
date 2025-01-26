@@ -1,4 +1,13 @@
-export const TextArea = ({name, value, onChange, rows=3}) => (
+import {FC, ChangeEvent} from "react";
+
+type TextAreaProps = {
+    name: string,
+    value: string,
+    onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void,
+    rows?: number
+}
+
+export const TextArea: FC<TextAreaProps> = ({name, value, onChange, rows=3}) => (
     <textarea
         name={name}
         value={value}

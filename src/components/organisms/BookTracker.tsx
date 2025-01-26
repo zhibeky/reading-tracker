@@ -1,11 +1,12 @@
 import {BookForm} from '../organisms/BookForm.tsx'
 import {useState} from "react";
+import {Book} from "../../types/book.ts";
 
 export const BookTracker = () => {
-    const [bookData, setBookData] = useState({
+    const [bookData, setBookData] = useState<Book>({
         title: '',
         author: '',
-        isAudioBook: 'false',
+        isAudioBook: false,
         favouriteCharacter: '',
         startedReading: '', // Date dd-mm-yyyy
         enjoymentRating: 0,
