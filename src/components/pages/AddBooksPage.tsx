@@ -15,7 +15,7 @@ export const AddBooksPage = () => {
     const [bookData, setBookData] = useState<Book>({
         title: '',
         author: '',
-        isAudioBook: 'false',
+        isAudioBook: false,
         favouriteCharacter: '',
         startedReading: '', // Date dd-mm-yyyy
         enjoymentRating: 0,
