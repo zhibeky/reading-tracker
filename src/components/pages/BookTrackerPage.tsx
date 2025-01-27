@@ -82,21 +82,7 @@ export const BookTrackerPage = () => {
                                                 // className="text-blue-500 text-sm hover:underline"
                                                 className="p-2 rounded-md hover:bg-gray-100"
                                                 title="Show Details"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    strokeWidth={1.5}
-                                                    stroke="currentColor"
-                                                    className="w-6 h-6 text-gray-800"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        d="M15.75 9V5.25a2.25 2.25 0 00-2.25-2.25h-3a2.25 2.25 0 00-2.25 2.25V9M19.5 9V5.25a2.25 2.25 0 00-2.25-2.25h-3a2.25 2.25 0 00-2.25 2.25V9m0 10.5v1.5m-9-1.5v1.5M3 18.75h18"
-                                                    />
-                                                </svg>
+                                            >Show Details
                                             </button>
 
                                             <Link
