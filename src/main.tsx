@@ -1,9 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router";
+import { ClerkProvider } from '@clerk/clerk-react';
+
 import './index.css';
 import {App} from './App.tsx';
-import { ClerkProvider } from '@clerk/clerk-react';
-import { BrowserRouter, Routes, Route } from "react-router";
 import {AddBooksPage} from "./components/pages/AddBooksPage.tsx";
 import {RootLayout} from "./components/pages/RootLayout.tsx";
 import {BookTrackerPage} from "./components/pages/BookTrackerPage.tsx";
