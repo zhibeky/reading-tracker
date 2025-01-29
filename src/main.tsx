@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
                       <Route index element={<App />} />
                       <Route path="add-book" element={<AddBooksPage/>} />
                       <Route path="book-tracker" element={<BookTrackerPage />}/>
-                      <Route path="/edit-book/:index" element={<EditBookPage />}/>
+                      <Route path="edit-book/:index" element={<EditBookPage />}/>
                   </Route>
               </Routes>
           </BrowserRouter>
