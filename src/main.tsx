@@ -19,7 +19,7 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-          <BrowserRouter basename="/reading-tracker">
+          <BrowserRouter>
               <Routes>
                   <Route path="/" element={<RootLayout />}>
                       <Route index element={<App />} />
