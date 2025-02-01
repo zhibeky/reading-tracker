@@ -27,11 +27,22 @@ export const EditBookPage: FC = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(book) {
-            console.log("Updated Book Details:", book);
-            setTimeout(() => {
-                alert("Book details updated successfully!");
-                navigate("/book-tracker");
-            }, 1000);
+            if (!book.title || !book.author) {
+                alert("Title and Author are required!");
+                return;
+            }
+            const booksData = localStorage.getItem("books");
+            if (booksData) {
+                const books: Book[] = JSON.parse(booksData);
+                const bookIndex = parseInt(index || "0", 10);
+                books[bookIndex] = book;
+                localStorage.setItem("books", JSON.stringify(books));
+                console.log("Book details updated:", book);
+                setTimeout(() => {
+                    alert("Book details updated successfully!");
+                    navigate("/book-tracker");
+                }, 500);
+            }
         }
     };
     if (!book) {
