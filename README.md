@@ -1,4 +1,4 @@
-# Book Management System
+# ReadOn
 
 A simple Book Management System built with **React** and **TypeScript** to manage, edit, and store books dynamically. This app provides an intuitive user interface for listing, editing, and maintaining book information, with persistent data storage using LocalStorage. Designed with a focus on reusability and responsiveness, the app ensures a seamless user experience.
 
