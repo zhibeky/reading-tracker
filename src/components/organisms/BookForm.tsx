@@ -2,9 +2,9 @@ import {ChangeEvent, FC} from 'react';
 import { Input } from '../atoms/Input';
 import { TextArea } from '../atoms/TextArea';
 import { FormField } from '../molecules/FormField';
-import ReadingEase from '../molecules/ReadingEase';
+import {ReadingEase} from '../molecules/ReadingEase';
 import { BookTypeSelector } from '../molecules/BookTypeSelector';
-import HeartRating from "../atoms/HeartRating.tsx";
+import {HeartRating} from "../atoms/HeartRating.tsx";
 import {Book} from "../../types/book.ts"
 
 
@@ -14,28 +14,25 @@ interface BookFormProps {
 }
 
 export const BookForm: FC<BookFormProps> = ({ bookData, onChange }) => {
+
+    const handleFormChange = (fieldName: keyof Book, value: string | boolean | null): void => {
+        onChange({
+            ...bookData,
+            [fieldName]: value,
+        });
+    };
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         const { name, value, type } = e.target;
         if (type === 'checkbox') {
-            const {checked} = e.target as HTMLInputElement;
-            onChange({
-                ...bookData,
-                [name]: checked,
-            });
-        }{
-            onChange({
-                ...bookData,
-                [name]: value,
-            });
+            const { checked } = e.target as HTMLInputElement;
+            handleFormChange(name as keyof Book, checked);
+        } else {
+            handleFormChange(name as keyof Book, value);
         }
-        // onChange({
-        //     ...bookData,
-        //     [name]: type === 'checkbox' ? checked : value
-        // });
     };
 
     const handleBookTypeChange = (isAudioBook: boolean): void => {
-        onChange({ ...bookData, isAudioBook });
+        handleFormChange("isAudioBook", isAudioBook);
     };
 
     return (
@@ -94,7 +91,10 @@ export const BookForm: FC<BookFormProps> = ({ bookData, onChange }) => {
                     </FormField>
 
                     <FormField label="How much I liked it">
-                        <HeartRating/>
+                        <HeartRating
+                            value={bookData.enjoymentRating}
+                            onChange={(rating) => onChange({ ...bookData, enjoymentRating: rating })}
+                        />
                     </FormField>
 
                     <FormField label="About the author">
@@ -142,7 +142,10 @@ export const BookForm: FC<BookFormProps> = ({ bookData, onChange }) => {
                     </FormField>
 
                     <FormField label="Ease of reading">
-                        <ReadingEase/>
+                        <ReadingEase
+                            value={bookData.readingEase}
+                            onChange={(ease) => onChange({ ...bookData, readingEase: ease })}
+                        />
                     </FormField>
 
                     <FormField label="Summary">
