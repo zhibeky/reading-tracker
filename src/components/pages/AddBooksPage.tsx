@@ -1,8 +1,12 @@
 import {useState, FormEvent} from 'react';
+import {useNavigate} from "react-router-dom";
+
+import {SignedIn, SignedOut } from "@clerk/clerk-react";
+
 import { BookForm } from '../organisms/BookForm';
 import {Book} from "../../types/book.ts";
-import {SignedIn, SignedOut } from "@clerk/clerk-react";
 import {Authorize} from "../organisms/Authorize.tsx";
+import {BasicAlerts} from "../molecules/Alert.tsx"
 
 const saveBookToLocalStorage = (book: Book): void => {
     const storedBooks = localStorage.getItem('books');
@@ -12,6 +16,10 @@ const saveBookToLocalStorage = (book: Book): void => {
 };
 
 export const AddBooksPage = () => {
+    const [showAlert, setShowAlert] = useState(false);
+    const [isRedirecting, setIsRedirecting] = useState(false);
+    const navigate = useNavigate();
+
     const [bookData, setBookData] = useState<Book>({
         title: '',
         author: '',
@@ -39,7 +47,13 @@ export const AddBooksPage = () => {
         e.preventDefault();
         console.log('Book Data Submitted:', bookData);
         saveBookToLocalStorage(bookData);
-        alert('Form submitted successfully!');
+        setShowAlert(true);
+        setTimeout(() => {
+            setIsRedirecting(true);
+            setTimeout(() => {
+                navigate('/book-tracker');
+            }, 2000)
+        }, 2000);
     };
 
     return (
@@ -57,6 +71,10 @@ export const AddBooksPage = () => {
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <BookForm bookData={bookData} onChange={handleBookDataChange} />
                         {/*<BookTrackerPage />*/}
+                        {showAlert && <BasicAlerts severity="success">Book added successfully!</BasicAlerts>}
+                        {isRedirecting ? (
+                            <p className="text-center text-gray-600">Redirecting...</p>
+                        ) : (<p></p>)}
                         <button
                             type="submit"
                             className="py-3 px-6 bg-[#E9AFA3] text-white rounded-md text-lg font-medium hover:bg-[#D79A8F] focus-outline-none focus:ring-[#E9AFA3] w-full max-w-xs mx-auto"
@@ -64,6 +82,7 @@ export const AddBooksPage = () => {
                             Submit
                         </button>
                     </form>
+
                 </div>
             </SignedIn>
         </main>
