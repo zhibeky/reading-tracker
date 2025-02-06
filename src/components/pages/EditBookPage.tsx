@@ -2,11 +2,14 @@ import {FC, useState, useEffect, FormEvent} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Book} from "../../types/book.ts"
 import {BookForm} from "../organisms/BookForm.tsx";
+import {BasicAlerts} from "../molecules/Alert.tsx";
 
 export const EditBookPage: FC = () => {
     const {index} = useParams<{ index: string }>();
     const navigate = useNavigate();
     const [book, setBook] = useState<Book | null>(null);
+    const [showAlert, setShowAlert] = useState(false);
+    const [isRedirecting, setIsRedirecting] = useState(false);
 
     useEffect(() => {
         const fetchBookDetails = () => {
@@ -38,9 +41,12 @@ export const EditBookPage: FC = () => {
                 books[bookIndex] = book;
                 localStorage.setItem("books", JSON.stringify(books));
                 console.log("Book details updated:", book);
+                setShowAlert(true);
                 setTimeout(() => {
-                    alert("Book details updated successfully!");
-                    navigate("/book-tracker");
+                    setIsRedirecting(true);
+                    setTimeout(() => {
+                        navigate('/book-tracker');
+                    }, 1000)
                 }, 500);
             }
         }
@@ -55,6 +61,10 @@ export const EditBookPage: FC = () => {
             </h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <BookForm bookData={book} onChange={handleFormChange}/>
+                {showAlert && <BasicAlerts severity="success">Book added successfully!</BasicAlerts>}
+                {isRedirecting ? (
+                    <p className="text-center text-gray-600">Redirecting...</p>
+                ) : (<p></p>)}
                 <button
                     type="submit"
                     className="py-3 px-6 bg-[#E9AFA3] text-white rounded-md text-lg font-medium hover:bg-[#D79A8F] focus-outline-none focus:ring-[#E9AFA3] w-full max-w-xs mx-auto"
