@@ -46,7 +46,7 @@ export const EditBookPage: FC = () => {
                     setIsRedirecting(true);
                     setTimeout(() => {
                         navigate('/book-tracker');
-                    }, 1000)
+                    }, 2000)
                 }, 500);
             }
         }
