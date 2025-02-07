@@ -8,8 +8,8 @@ import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/clerk-react"
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Book Tracker', href: '/book-tracker' },
-    { name: 'Stats', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Stats', href: '/stats' },
+    { name: 'About', href: '/about' },
 ]
 
 function classNames(...classes: (string | undefined | null | false)[]): string {
