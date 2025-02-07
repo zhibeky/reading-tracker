@@ -10,7 +10,7 @@ import {RootLayout} from "./components/pages/RootLayout.tsx";
 import {BookTrackerPage} from "./components/pages/BookTrackerPage.tsx";
 import {EditBookPage} from "./components/pages/EditBookPage.tsx";
 import {StatsPage} from "./components/pages/StatsPage.tsx";
-import {About} from "./components/pages/About.tsx";
+import {AboutPage} from "./components/pages/AboutPage.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -29,7 +29,7 @@ createRoot(document.getElementById('root')!).render(
                       <Route path="book-tracker" element={<BookTrackerPage />}/>
                       <Route path="edit-book/:index" element={<EditBookPage />}/>
                       <Route path="stats" element={<StatsPage />}/>
-                      <Route path="about" element={<About />}/>
+                      <Route path="about" element={<AboutPage />}/>
                   </Route>
               </Routes>
           </BrowserRouter>
