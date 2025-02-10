@@ -4,13 +4,14 @@ export const AboutPage: FC = ()=> {
     return (
         <main className="min-h-screen bg-gray-100 px-6 py-12 flex flex-col items-center">
             <div className="max-w-3xl bg-white shadow-md rounded-lg p-8">
-                {/* Title */}
-                <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">About Reading Tracker</h1>
-
-                {/* Introduction */}
-                <p className="text-gray-600 text-lg text-center mb-6">
-                    Reading Tracker helps book lovers organize and track their reading journey effortlessly.
-                </p>
+                <section className="text-center">
+                    <h1 className="text-3xl font-bold text-gray-800 text-center mb-4 sm:text-4xl">
+                        About Reading Tracker
+                    </h1>
+                    <p className="mt-4 text-lg text-center text-gray-600">
+                        Reading Tracker helps book lovers organize and track their reading journey effortlessly
+                    </p>
+                </section>
 
                 {/* Key Features */}
                 <section className="mt-12 px-6 py-12 bg-gray-50">
@@ -31,16 +32,16 @@ export const AboutPage: FC = ()=> {
                                     className="h-8 w-8 text-white"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
                                         <rect width="24" height="24"></rect>
                                         <path
                                             d="M12 6.90909C10.8999 5.50893 9.20406 4.10877 5.00119 4.00602C4.72513 3.99928 4.5 4.22351 4.5 4.49965C4.5 6.54813 4.5 14.3034 4.5 16.597C4.5 16.8731 4.72515 17.09 5.00114 17.099C9.20405 17.2364 10.8999 19.0998 12 20.5M12 6.90909C13.1001 5.50893 14.7959 4.10877 18.9988 4.00602C19.2749 3.99928 19.5 4.21847 19.5 4.49461C19.5 6.78447 19.5 14.3064 19.5 16.5963C19.5 16.8724 19.2749 17.09 18.9989 17.099C14.796 17.2364 13.1001 19.0998 12 20.5M12 6.90909L12 20.5"
-                                            stroke="#ffffff" stroke-linejoin="round"></path>
+                                            stroke="#ffffff" strokeLinejoin="round"></path>
                                         <path
                                             d="M19.2353 6H21.5C21.7761 6 22 6.22386 22 6.5V19.539C22 19.9436 21.5233 20.2124 21.1535 20.0481C20.3584 19.6948 19.0315 19.2632 17.2941 19.2632C14.3529 19.2632 12 21 12 21C12 21 9.64706 19.2632 6.70588 19.2632C4.96845 19.2632 3.64156 19.6948 2.84647 20.0481C2.47668 20.2124 2 19.9436 2 19.539V6.5C2 6.22386 2.22386 6 2.5 6H4.76471"
-                                            stroke="#ffffff" stroke-linejoin="round"></path>
+                                            stroke="#ffffff" strokeLinejoin="round"></path>
                                     </g>
                                 </svg>
 
@@ -63,12 +64,12 @@ export const AboutPage: FC = ()=> {
                                     xmlns="http://www.w3.org/2000/svg"
                                     strokeWidth={1.2}
                                 >
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
                                         <path
                                             d="M10.5 10.5L11.5 11.5L14 9M8.25 5H15.75C16.4404 5 17 5.58763 17 6.3125V19L12 15.5L7 19V6.3125C7 5.58763 7.55964 5 8.25 5Z"
-                                            stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round"></path>
                                     </g>
                                 </svg>
                             </div>
@@ -89,10 +90,10 @@ export const AboutPage: FC = ()=> {
                                     version="1.1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     stroke="#ffffff"
-                                    stroke-width={20}
+                                    strokeWidth={20}
                                 >
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
                                         <path
                                             d="M679.964 943.91H8.106c-4.422 0-8-3.578-8-7.998v-67.206c0-49.458 25.386-68.33 72.228-85.858 8.998-3.374 20.814-6.716 34.492-10.592 46.686-13.214 117.234-33.18 117.234-71.484a7.992 7.992 0 0 1 7.998-7.998 7.994 7.994 0 0 1 7.998 7.998c0 50.394-74.484 71.484-128.872 86.888-13.334 3.764-24.856 7.03-33.236 10.17-41.904 15.684-61.846 30.274-61.846 70.876v59.208h655.864v-59.208c0-40.602-19.95-55.192-61.846-70.86-8.404-3.156-19.918-6.422-33.26-10.202-54.378-15.404-128.848-36.494-128.848-86.874a7.992 7.992 0 0 1 7.998-7.998 7.994 7.994 0 0 1 7.998 7.998c0 38.29 70.534 58.27 117.21 71.484 13.684 3.876 25.494 7.218 34.508 10.608 46.85 17.512 72.234 36.382 72.234 85.842v67.206a7.99 7.99 0 0 1-7.996 8z"
@@ -154,9 +155,9 @@ export const AboutPage: FC = ()=> {
                 </section>
 
                 {/* How It Works */}
-                <section className="mb-6">
+                <section className="mb-6 text-center w-2/5">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-3">How It Works</h2>
-                    <p className="text-gray-700">
+                    <p className="mt-4 text-lg text-center text-gray-700">
                         Simply add books to your list, update your reading progress, and manage details
                         like ratings, quotes, and personal insights. Your data is securely stored locally on your
                         device.
@@ -164,9 +165,9 @@ export const AboutPage: FC = ()=> {
                 </section>
 
                 {/* About Developer (Optional) */}
-                <section className="mb-6">
+                <section className="mb-6 text-center">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-3">About the Developer</h2>
-                    <p className="text-gray-700">
+                    <p className="mt-4 text-lg text-center text-gray-700">
                         This project was built with React and TypeScript to provide an intuitive and
                         user-friendly way to track reading progress. Designed with simplicity and usability in mind!
                     </p>
