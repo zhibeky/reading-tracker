@@ -2,8 +2,8 @@ import {FC} from "react";
 
 export const AboutPage: FC = ()=> {
     return (
-        <main className="min-h-screen bg-gray-100 px-6 py-12 flex flex-col items-center">
-            <div className="max-w-3xl bg-white shadow-md rounded-lg p-8">
+        <main className="min-h-screen max-w-5xl mx-auto bg-gray-100 px-6 py-12 flex flex-col items-center rounded-lg shadow-md">
+            <div className="max-w-3xl bg-white p-8">
                 <section className="text-center">
                     <h1 className="text-3xl font-bold text-gray-800 text-center mb-4 sm:text-4xl">
                         About Reading Tracker
@@ -155,22 +155,34 @@ export const AboutPage: FC = ()=> {
                 </section>
 
                 {/* How It Works */}
-                <section className="mb-6 text-center w-2/5">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-3">How It Works</h2>
-                    <p className="mt-4 text-lg text-center text-gray-700">
-                        Simply add books to your list, update your reading progress, and manage details
-                        like ratings, quotes, and personal insights. Your data is securely stored locally on your
-                        device.
-                    </p>
-                </section>
-
-                {/* About Developer (Optional) */}
                 <section className="mb-6 text-center">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-3">About the Developer</h2>
-                    <p className="mt-4 text-lg text-center text-gray-700">
-                        This project was built with React and TypeScript to provide an intuitive and
-                        user-friendly way to track reading progress. Designed with simplicity and usability in mind!
-                    </p>
+                    <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
+                        <div
+                            className="text-gray-800 hover:text-[#D79A8F] hover:border-b-2 hover:border-[#D79A8F] rounded-md px-3 py-2 text-sm font-medium"
+                        >
+                            <h2 className="text-2xl font-semibold  mb-4">
+                                How It Works
+                            </h2>
+                            <p className="mt-4 text-lg text-center text-gray-700">
+                                Simply add books to your list, update your reading progress, and manage details
+                                like ratings, quotes, and personal insights. Your data is securely stored locally on
+                                your
+                                device.
+                            </p>
+                        </div>
+                        <div
+                            className="text-gray-800 hover:text-[#D79A8F] hover:border-b-2 hover:border-[#D79A8F] rounded-md px-3 py-2 text-sm font-medium"
+                        >
+                            <h2 className="text-2xl font-semibold mb-4">
+                                About the Developer
+                            </h2>
+                            <p className="mt-4 text-lg text-center text-gray-700">
+                                This project was built with React and TypeScript to provide an intuitive and
+                                user-friendly way to track reading progress. Designed with simplicity and usability in
+                                mind!
+                            </p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>
